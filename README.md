@@ -9,7 +9,7 @@ This repository contains the backend code for the Hate Speech Recognition projec
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/backend-repo.git
+git clone https://github.com/GauDan-2005/hate-speech-backend.git
 ```
 
 2. Navigate to the project directory:
