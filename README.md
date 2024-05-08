@@ -37,6 +37,10 @@ python -m venv env
 pip install -r requirements.txt
 ```
 
+```bash
+pip install googletrans==3.1.0a0
+```
+
 ## Usage
 
 1. Set the Flask app:
