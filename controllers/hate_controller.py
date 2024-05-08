@@ -18,6 +18,7 @@ class HateController:
     def hate_build():
         # Retrieve JSON data from the request
         json_data = request.get_json()
+        print("route hit")
 
         # Extract initial_state and goal_state from JSON data
         initial_state = json_data.get("initial_state")
