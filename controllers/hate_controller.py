@@ -2,16 +2,17 @@ from flask import Flask, request, jsonify
 import re
 import string
 import joblib
-import nltk
+# import nltk
 from googletrans import Translator
 
 app = Flask(__name__)
 
 class HateController:
-    stopword = set(nltk.corpus.stopwords.words('english'))  # Define stopwords set
+    # stopword = set(nltk.corpus.stopwords.words('english'))  # Define stopwords set
 
     def __init__(self):
-        nltk.download('stopwords')  # Download NLTK stopwords
+        # nltk.download('stopwords')  # Download NLTK stopwords
+        pass
 
     @staticmethod
     def hate_build():
@@ -44,18 +45,18 @@ class HateController:
         # Return the response with status code 200 (OK)
         return jsonify(response), 200
 
-    @staticmethod
-    def clean(text):
-        text = str(text).lower()
-        text = re.sub('\[.*?\]', '', text)
-        text = re.sub('https?://\S+|www\.\S+', '', text)
-        text = re.sub('<.*?>+', '', text)
-        text = re.sub('[%s]' % re.escape(string.punctuation), '', text)
-        text = re.sub('\n', '', text)
-        text = re.sub('\w*\d\w*', '', text)
-        text = [word for word in text.split(' ') if word not in HateController.stopword]
-        text = " ".join(text)
-        return text
+    # @staticmethod
+    # def clean(text):
+    #     text = str(text).lower()
+    #     text = re.sub('\[.*?\]', '', text)
+    #     text = re.sub('https?://\S+|www\.\S+', '', text)
+    #     text = re.sub('<.*?>+', '', text)
+    #     text = re.sub('[%s]' % re.escape(string.punctuation), '', text)
+    #     text = re.sub('\n', '', text)
+    #     text = re.sub('\w*\d\w*', '', text)
+    #     text = [word for word in text.split(' ') if word not in HateController.stopword]
+    #     text = " ".join(text)
+    #     return text
 
 
     @staticmethod
